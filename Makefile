@@ -1,17 +1,21 @@
 CC=gcc
 CFLAGS=-Wall -Wextra -g -O0
 
-CFILES=$(wildcard *.c)     #all .c files in current dir
-OBJECTS=$(CFILES:.c=.o)    #replace .c with .o
-BINARY =bin
+SRC=$(wildcard *.c)     #all .c files in current dir
+EXE=$(SRC:.c=)          #each .c builds into its own program
+#OBJS=$(SRC:.c=.o)    #replace .c with .o
+#BINARY =bin
 
-all: $(BINARY)
+all: $(EXE) # $(BINARY)
 
-$(BINARY): $(OBJECTS)
-	$(CC) -o $@ $^
+%: %.c
+	$(CC) $(CFLAGS) $< -o $@
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c -o $@ $<
+#$(BINARY): $(OBJS)
+#	$(CC) $^ -o  $@
+
+#%.o: %.c
+#	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -rf $(BINARY) $(OBJECTS)
+	rm -f $(EXE) *.o #$(OBJS) $(BINARY)
