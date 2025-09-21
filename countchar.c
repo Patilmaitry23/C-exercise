@@ -2,7 +2,7 @@
 
 int main()
 {
-long nc;
+long nc=0;
 while (getchar() != EOF)
 {
 ++nc;
