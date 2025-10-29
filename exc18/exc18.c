@@ -10,10 +10,8 @@ void reverse(char s[]);
 int main()
 {
     int len; // current line length
-    int max; // maximum length seen so far
     char line[MAXLINE]; // current input line
 
-    max = 0;
     while ((len = getlen(line, MAXLINE)) > 0) {
         // Check if the current line is the longest one seen so far
         if (len > 1 || (len == 1 && line[0] != '\n')) {
