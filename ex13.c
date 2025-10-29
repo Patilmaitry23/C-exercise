@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-int main() {
+int main()
+{
     int c, length=0, ccount=0; //input character, length of the current word typed, total count of words in input
     int wlen[10]; // length of each word go upto 10
     int tcount  = 3; //i want total 3 words as input only
