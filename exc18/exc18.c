@@ -4,7 +4,7 @@
 
 // Function prototypes
 int getlen(char line[], int maxline);
-void copy(char to[], char from[]);
+void reverse(char s[]);
 
 /* print the longest input line */
 int main()
