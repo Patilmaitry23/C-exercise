@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <ctype.h>
-#include <math.h>
-
+#include<math.h>
 /* atof: convert string s to double */
 double atof(char s[])
 {
@@ -21,6 +20,8 @@ double atof(char s[])
         val = 10.0 * val + (s[i] - '0');
         power *= 10;
     }
+    val = sign * val / power;
+
     if (s[i] == 'e' || s[i] == 'E')
     {
         i++;
